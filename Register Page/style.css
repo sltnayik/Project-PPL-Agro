@@ -1,7 +1,5 @@
-.custom-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  height: 100%;
+body {
+  overflow-x: hidden;
 }
 
 .btn-hover:hover {
@@ -10,8 +8,44 @@
   transform: scale(1.1);
 }
 
+.form-container {
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  animation: slideX 2s forwards;
+}
+
 @media (max-width: 768px) {
-  .custom-grid {
-    grid-template-columns: 1fr; /* Tumpuk kolom pada layar kecil */
+  body {
+    overflow: auto;
+  }
+
+  .form-container {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    animation: slideY 2s forwards;
+  }
+}
+
+@keyframes slideX {
+  from {
+    transform: translateX(250px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideY {
+  from {
+    transform: translateY(250px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
